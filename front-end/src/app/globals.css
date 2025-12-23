@@ -1,0 +1,285 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Altudo Official Colors - Light Mode */
+  --background: oklch(1 0 0); /* Pure white background */
+  --foreground: oklch(0.25 0.01 0); /* Altudo Grey text */
+  --card: oklch(1 0 0); /* White cards */
+  --card-foreground: oklch(0.25 0.01 0); /* Altudo Grey text on cards */
+  --popover: oklch(1 0 0); /* White popovers */
+  --popover-foreground: oklch(0.25 0.01 0); /* Altudo Grey text on popovers */
+  --primary: oklch(0.85 0.15 85); /* Altudo Yellow - RGB(255, 202, 7) */
+  --primary-foreground: oklch(0.25 0.01 0); /* Altudo Grey text on primary */
+  --secondary: oklch(0.9 0 0); /* Light gray secondary */
+  --secondary-foreground: oklch(0.25 0.01 0); /* Altudo Grey text on secondary */
+  --muted: oklch(0.95 0 0); /* Muted background */
+  --muted-foreground: oklch(0.5 0 0); /* Muted text */
+  --accent: oklch(0.85 0.15 85); /* Altudo Yellow accent */
+  --accent-foreground: oklch(0.25 0.01 0); /* Altudo Grey text on accent */
+  --destructive: oklch(0.6 0.2 15); /* Red for destructive actions */
+  --destructive-foreground: oklch(0.99 0 0); /* White text on destructive */
+  --border: oklch(0.85 0 0); /* Light gray borders */
+  --input: oklch(0.85 0 0); /* Light gray input borders */
+  --ring: oklch(0.85 0.15 85); /* Altudo Yellow focus ring */
+  --chart-1: oklch(0.85 0.15 85); /* Altudo Yellow */
+  --chart-2: oklch(0.7 0.1 60); /* Amber variation */
+  --chart-3: oklch(0.25 0.01 0); /* Altudo Grey */
+  --chart-4: oklch(0.9 0.1 85); /* Light yellow */
+  --chart-5: oklch(0.4 0 0); /* Dark gray */
+  --radius: 0.5rem; /* Slightly smaller radius for modern look */
+  --sidebar: oklch(0.96 0 0); /* Very light gray sidebar */
+  --sidebar-foreground: oklch(0.25 0.01 0); /* Altudo Grey sidebar text */
+  --sidebar-primary: oklch(0.85 0.15 85); /* Altudo Yellow sidebar primary */
+  --sidebar-primary-foreground: oklch(0.25 0.01 0); /* Altudo Grey sidebar primary text */
+  --sidebar-accent: oklch(0.9 0 0); /* Light gray sidebar accent */
+  --sidebar-accent-foreground: oklch(0.25 0.01 0); /* Altudo Grey sidebar accent text */
+  --sidebar-border: oklch(0.85 0 0); /* Light gray sidebar border */
+  --sidebar-ring: oklch(0.85 0.15 85); /* Altudo Yellow sidebar ring */
+
+  /* Altudo theme variables */
+  --wizard-step-active: oklch(0.85 0.15 85); /* Altudo Yellow for active steps */
+  --wizard-step-complete: oklch(0.7 0.1 60); /* Amber for completed */
+  --wizard-step-pending: oklch(0.6 0 0); /* Gray for pending steps */
+  --log-stream-bg: oklch(0.98 0 0); /* Very light gray for log stream */
+  --log-stream-border: oklch(0.85 0 0); /* Light gray for log stream border */
+  
+  /* Altudo official brand colors */
+  --altudo-yellow: oklch(0.85 0.15 85); /* Altudo Yellow - RGB(255, 202, 7) */
+  --altudo-yellow-light: oklch(0.9 0.1 85); /* Light Altudo Yellow */
+  --altudo-yellow-dark: oklch(0.8 0.2 85); /* Dark Altudo Yellow */
+  --altudo-grey: oklch(0.25 0.01 0); /* Altudo Grey - RGB(52, 49, 50) */
+  --altudo-grey-light: oklch(0.5 0 0); /* Light Altudo Grey */
+  --altudo-grey-dark: oklch(0.2 0.01 0); /* Dark Altudo Grey */
+}
+
+.dark {
+  /* Altudo Official Colors - Dark Mode */
+  --background: oklch(0.1 0 0); /* Very dark background */
+  --foreground: oklch(0.9 0 0); /* Light gray text */
+  --card: oklch(0.12 0 0); /* Dark cards */
+  --card-foreground: oklch(0.9 0 0); /* Light gray text on cards */
+  --popover: oklch(0.12 0 0); /* Dark popovers */
+  --popover-foreground: oklch(0.9 0 0); /* Light gray text on popovers */
+  --primary: oklch(0.85 0.15 85); /* Altudo Yellow - same as light mode */
+  --primary-foreground: oklch(0.25 0.01 0); /* Altudo Grey text on primary */
+  --secondary: oklch(0.2 0 0); /* Dark gray secondary */
+  --secondary-foreground: oklch(0.85 0.15 85); /* Altudo Yellow text on secondary */
+  --muted: oklch(0.15 0 0); /* Muted dark background */
+  --muted-foreground: oklch(0.6 0 0); /* Muted light text */
+  --accent: oklch(0.85 0.15 85); /* Altudo Yellow accent */
+  --accent-foreground: oklch(0.25 0.01 0); /* Altudo Grey text on accent */
+  --destructive: oklch(0.5 0.2 15); /* Red for destructive actions */
+  --destructive-foreground: oklch(0.9 0 0); /* Light text on destructive */
+  --border: oklch(0.25 0 0); /* Dark gray borders */
+  --input: oklch(0.25 0 0); /* Dark gray input borders */
+  --ring: oklch(0.85 0.15 85); /* Altudo Yellow focus ring */
+  --chart-1: oklch(0.85 0.15 85); /* Altudo Yellow */
+  --chart-2: oklch(0.7 0.1 60); /* Amber variation */
+  --chart-3: oklch(0.25 0.01 0); /* Altudo Grey */
+  --chart-4: oklch(0.9 0.1 85); /* Light yellow */
+  --chart-5: oklch(0.3 0 0); /* Dark gray */
+  --sidebar: oklch(0.08 0 0); /* Very dark sidebar */
+  --sidebar-foreground: oklch(0.9 0 0); /* Light gray sidebar text */
+  --sidebar-primary: oklch(0.85 0.15 85); /* Altudo Yellow sidebar primary */
+  --sidebar-primary-foreground: oklch(0.25 0.01 0); /* Altudo Grey sidebar primary text */
+  --sidebar-accent: oklch(0.15 0 0); /* Dark gray sidebar accent */
+  --sidebar-accent-foreground: oklch(0.85 0.15 85); /* Altudo Yellow sidebar accent text */
+  --sidebar-border: oklch(0.25 0 0); /* Dark gray sidebar border */
+  --sidebar-ring: oklch(0.85 0.15 85); /* Altudo Yellow sidebar ring */
+
+  /* Dark mode wizard theme variables */
+  --wizard-step-active: oklch(0.85 0.15 85); /* Altudo Yellow for active steps */
+  --wizard-step-complete: oklch(0.7 0.1 60); /* Amber for completed */
+  --wizard-step-pending: oklch(0.4 0 0); /* Gray for pending steps */
+  --log-stream-bg: oklch(0.08 0 0); /* Very dark for log stream */
+  --log-stream-border: oklch(0.25 0 0); /* Dark gray for log stream border */
+  
+  /* Altudo official brand colors - dark mode variants */
+  --altudo-yellow: oklch(0.85 0.15 85); /* Altudo Yellow - RGB(255, 202, 7) */
+  --altudo-yellow-light: oklch(0.9 0.1 85); /* Light Altudo Yellow */
+  --altudo-yellow-dark: oklch(0.8 0.2 85); /* Dark Altudo Yellow */
+  --altudo-grey: oklch(0.25 0.01 0); /* Altudo Grey - RGB(52, 49, 50) */
+  --altudo-grey-light: oklch(0.5 0 0); /* Light Altudo Grey */
+  --altudo-grey-dark: oklch(0.2 0.01 0); /* Dark Altudo Grey */
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-bebas-kai: var(--font-bebas-kai);
+  --font-poppins: var(--font-poppins);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Added wizard-specific color tokens */
+  --color-wizard-step-active: var(--wizard-step-active);
+  --color-wizard-step-complete: var(--wizard-step-complete);
+  --color-wizard-step-pending: var(--wizard-step-pending);
+  --color-log-stream-bg: var(--log-stream-bg);
+  --color-log-stream-border: var(--log-stream-border);
+  
+  /* Altudo official brand color tokens */
+  --color-altudo-yellow: var(--altudo-yellow);
+  --color-altudo-yellow-light: var(--altudo-yellow-light);
+  --color-altudo-yellow-dark: var(--altudo-yellow-dark);
+  --color-altudo-grey: var(--altudo-grey);
+  --color-altudo-grey-light: var(--altudo-grey-light);
+  --color-altudo-grey-dark: var(--altudo-grey-dark);
+  
+  /* Additional color utilities for footer */
+  --color-bg-altudo-grey: var(--altudo-grey);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Altudo official theme styling */
+  .altudo-gradient {
+    background: linear-gradient(135deg, var(--altudo-yellow) 0%, var(--altudo-yellow-light) 100%);
+  }
+  
+  .altudo-text-gradient {
+    background: linear-gradient(135deg, var(--altudo-yellow) 0%, var(--altudo-yellow-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+      .altudo-card {
+        @apply bg-card border border-border rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 hover:border-primary/20;
+      }
+  
+  .altudo-button-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200;
+  }
+  
+  .altudo-button-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors duration-200;
+  }
+  
+  .altudo-yellow-accent {
+    @apply text-primary;
+  }
+  
+  .altudo-grey-text {
+    @apply text-foreground;
+  }
+  
+  .hero-text-with-line {
+    @apply relative pl-6;
+  }
+  
+  /* Footer Typography */
+  .footer-heading {
+    font-family: var(--font-bebas-kai), sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  
+  .footer-subheading {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  
+  .footer-body {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+  }
+  
+  .footer-link {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  
+  .hero-text-with-line::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60px;
+    background: var(--altudo-yellow);
+    border-radius: 2px;
+  }
+  
+  /* Cover/Main Headline Formula */
+  .cover-headline {
+    font-family: var(--font-bebas-kai), sans-serif;
+    font-size: 40px; /* 40 pt minimum */
+    font-weight: 400;
+    line-height: 44px; /* 44 pt leading */
+    letter-spacing: 0.05em; /* Reduced tracking for tighter spacing */
+    text-transform: uppercase; /* All caps */
+    text-align: left; /* Left aligned */
+    font-kerning: auto; /* Optical kerning */
+  }
+  
+  /* Cover Sub headline/Sub Headline Formula */
+  .sub-headline {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 20px; /* 20 pt minimum */
+    font-weight: 600; /* Semi Bold */
+    line-height: 24px; /* 24 pt leading */
+    letter-spacing: 0.05em; /* Reduced tracking for tighter spacing */
+    text-transform: capitalize; /* Title Case */
+    text-align: left; /* Left aligned */
+    font-kerning: auto; /* Optical kerning */
+  }
+}
