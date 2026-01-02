@@ -1,0 +1,476 @@
+@import "tailwindcss";
+@import 'plyr/dist/plyr.css';
+
+/* a[target='_blank']:after {
+    content: '\1F5D7';
+  } */
+
+/*
+    Hides Sitecore editor markup,
+    if you run the app in connected mode while the Sitecore cookies
+    are set to edit mode.
+  */
+.scChromeData,
+.scpm {
+  display: none !important;
+}
+
+/*
+    Styles for default JSS error components
+  */
+.sc-jss-editing-error,
+.sc-jss-placeholder-error {
+  padding: 1em;
+  background-color: lightyellow;
+}
+
+/* 
+    Style for default content block
+  */
+.contentTitle {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  @apply opacity-80;
+}
+
+.text-h1 {
+  @apply text-4xl font-extrabold tracking-tight lg:text-5xl leading-none;
+}
+.text-h2 {
+  @apply text-3xl font-semibold tracking-tight;
+}
+.text-h3 {
+  @apply text-2xl font-semibold tracking-tight;
+}
+.text-h4 {
+  @apply text-xl font-semibold tracking-tight;
+}
+.text-h5 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.text-h6 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.text-p {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+/* src/styles/globals.css */
+.slick-next {
+  right: 1.5rem !important;
+}
+.slick-prev {
+  left: 1.5rem !important;
+  z-index: 10 !important;
+}
+
+@theme {
+  /* Colors - using CSS variable references for dynamic dark mode */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-tertiary: var(--accent);
+  --color-tertiary-foreground: var(--accent-foreground);
+  --color-quaternary: var(--quaternary);
+  --color-quaternary-foreground: var(--quaternary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-slate: var(--slate);
+  --color-sidebar-background: var(--sidebar-background);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Border Radius */
+  --radius-sm: 2px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+  --radius-default: var(--radius-md);
+
+  /* Font Sizes */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 36px;
+  --font-size-5xl: 48px;
+
+  /* 
+   * Font Families
+   * Note: --font-satoshi and --font-zodiak CSS variables are set by Next.js 
+   * localFont in _app.tsx and used directly in @layer base styles.
+   * We don't define them here to avoid circular references.
+   */
+
+  /* Spacing */
+  --spacing-0: 0px;
+  --spacing-sm: 20px;
+  --spacing-md: 30px;
+  --spacing-lg: 50px;
+  --spacing-xl: 75px;
+
+  /* Height */
+  --height-41: 41px;
+  --height-137: 137px;
+  --height-387: 387px;
+  --height-600: 600px;
+
+  /* Width */
+  --width-600: 600px;
+
+  /* Shadow */
+  --shadow-light: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  --shadow-heavy: 0px 8px 24px rgba(0, 0, 0, 0.3);
+
+  /* Z-Index */
+  --z-5: 5;
+  --z-index-100: 100;
+
+  /* Keyframes */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+/* CSS Variables - Light mode defaults */
+:root,
+.fastlanewebsite {
+  --accent: #f4f4f5;
+  --accent-foreground: #0c4a6e;
+  --background: #ffffff;
+  --border: #d4d4d8;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --destructive: #dc2626;
+  --destructive-foreground: #fef2f2;
+  --foreground: #18181b;
+  --input: #e4e4e7;
+  --muted: #e4e4e7;
+  --muted-foreground: #71717a;
+  --popover: #ffffff;
+  --popover-foreground: #09090b;
+  --primary: #0c4a6e;
+  --primary-foreground: #fafafa;
+  --ring: #18181b;
+  --secondary: #e4e4e7;
+  --secondary-foreground: #18181b;
+  --chart-1: #2a9d90;
+  --chart-2: #e76e50;
+  --chart-3: #274754;
+  --chart-4: #e8c468;
+  --chart-5: #f4a462;
+  --sidebar-background: #fafafa;
+  --sidebar-foreground: #1D4ED8;
+  --sidebar-primary: #18181b;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accent-foreground: #18181b;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #a1a1aa;
+  --slate: #f1f5f9;
+  --quaternary: var(--accent);
+  --quaternary-foreground: var(--accent-foreground);
+}
+
+/* CSS Variables - Dark mode */
+.dark,
+.dark .fastlanewebsite {
+  --slate: #082f49;
+  --accent: #075985;
+  --accent-foreground: #fafafa;
+  --background: #082f49;
+  --border: #0369a1;
+  --card: #082f49;
+  --card-foreground: #fafafa;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #fef2f2;
+  --foreground: #fafafa;
+  --input: #075985;
+  --muted: #075985;
+  --muted-foreground: #a1a1aa;
+  --popover: #09090b;
+  --popover-foreground: #fafafa;
+  --primary: #bae6fd;
+  --primary-foreground: #18181b;
+  --ring: #d4d4d8;
+  --secondary: #0369a1;
+  --secondary-foreground: #fafafa;
+  --chart-1: #2662d9;
+  --chart-2: #e23670;
+  --chart-3: #e88c30;
+  --chart-4: #af57db;
+  --chart-5: #2eb88a;
+  --sidebar-background: #18181b;
+  --sidebar-foreground: #f4f4f5;
+  --sidebar-primary: #1d4ed8;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #27272a;
+  --sidebar-accent-foreground: #f4f4f5;
+  --sidebar-border: #27272a;
+  --sidebar-ring: #d4d4d8;
+  --quaternary: var(--accent);
+  --quaternary-foreground: var(--accent-foreground);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    font-family: var(--font-satoshi), sans-serif;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1 {
+    @apply text-4xl font-extrabold tracking-tight lg:text-5xl leading-none;
+    font-family: var(--font-zodiak), sans-serif;
+  }
+  h2 {
+    @apply text-3xl font-semibold tracking-tight;
+    font-family: var(--font-zodiak), sans-serif;
+  }
+  h3 {
+    @apply text-2xl font-semibold tracking-tight;
+    font-family: var(--font-zodiak), sans-serif;
+  }
+  h4 {
+    @apply text-xl font-semibold tracking-tight;
+    font-family: var(--font-zodiak), sans-serif;
+  }
+  h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: var(--font-zodiak), sans-serif;
+  }
+  h6 {
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: var(--font-zodiak), sans-serif;
+  }
+  p {
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: var(--font-satoshi), sans-serif;
+  }
+}
+
+.position-center,
+.position-left,
+.position-right {
+  @apply flex items-center;
+}
+.position-center {
+  @apply justify-center;
+}
+.position-left {
+  @apply justify-start;
+}
+.position-right {
+  @apply justify-end;
+}
+
+.grid-three-tile {
+  @apply grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+}
+
+.grid-image-text-split,
+.grid-equal-split {
+  @apply grid-cols-1;
+}
+
+/* Common styles for both arrows - ensure always visible */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: opacity 0.3s ease;
+}
+
+/* Hide default arrow icons when using custom component */
+.slick-prev::before,
+.slick-next::before {
+  display: none;
+}
+
+/* Left arrow position */
+.slick-prev {
+  left: 10px;
+}
+
+/* Right arrow position */
+.slick-next {
+  right: 10px;
+}
+
+/* Hover effect for arrow buttons */
+.slick-prev:hover,
+.slick-next:hover {
+  opacity: 0.8 !important;
+}
+.slick-dots {
+  bottom: 25px;
+}
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before {
+  @apply text-white;
+}
+.slick-dots li button:before {
+  @apply text-base;
+}
+
+.bottom-low-space {
+  @apply mb-5;
+}
+.bottom-medium-space {
+  @apply mb-10;
+}
+.bottom-large-space {
+  @apply mb-16;
+}
+.bottom-no-space {
+  @apply mb-0;
+}
+.top-low-space {
+  @apply mt-4;
+}
+.top-medium-space {
+  @apply mt-10;
+}
+.top-large-space {
+  @apply mt-16;
+}
+.top-no-space {
+  @apply mt-0;
+}
+.editing-mode .inside-editing-mode {
+  @apply opacity-100 visible pointer-events-auto;
+}
+
+.inside-editing-mode {
+  @apply opacity-0 invisible pointer-events-none;
+}
+.linklist:first-child ul a {
+  @apply text-lg font-semibold leading-7;
+}
+
+.linklist:nth-of-type(2) ul a {
+  @apply text-sm font-medium leading-none;
+}
+header .submenu:last-child ul {
+  right: 0;
+  left: auto;
+}
+header .row.component.column-splitter.basis-full .row {
+  @apply flex w-full;
+}
+header .row.component.column-splitter.basis-full .row .basis-full {
+  flex-basis: unset;
+}
+header .column-splitter [class~='basis-1/2']:nth-child(2) .row {
+  @apply md:gap-6;
+}
+.mega-nav-container .linklist a {
+  @apply text-secondary-foreground mix-blend-normal;
+}
+header .column-splitter [class~='basis-1/2']:nth-child(1) .row {
+  justify-content: flex-start;
+}
+.active-menu-item .meganav-item {
+  display: block;
+}
+
+/* Styling for Carousel */
+
+.editing-mode .carouselComponent .component-content {
+  display: none;
+}
+.editing-mode .carouselComponent .slick-slider .component-content {
+  display: block;
+}
+
+.carouselComponent.zoom-effect .slick-slide {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0.6;
+  transform: scale(0.9);
+}
+
+.carouselComponent.zoom-effect .slick-center {
+  opacity: 1;
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+/* Custom z-index utility */
+.z-5 {
+  z-index: 5;
+}
+
+/*  */
